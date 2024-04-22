@@ -8,6 +8,6 @@ constructor(page:Page){
 }
 
 async waitNumberofSeconds(timeInSeconds: number){
-    await this.page.waitForTimeout(timeInSeconds*1000)
+    await this.page.waitForTimeout(timeInSeconds*5000)
 }
 }
