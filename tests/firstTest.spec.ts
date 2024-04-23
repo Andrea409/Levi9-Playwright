@@ -39,6 +39,6 @@ test('Sofas',async ({page})=>{
                         test('Sign up for shop.ist',async ({page})=>{
                             await page.getByText('SIGN UP FOR SHOP.IST').first().click()
                             })
-
+                        }
 )
 
