@@ -3,27 +3,27 @@ import {NavigationPage } from '../page-objects/navigationPage'
 import {ChairsPage } from '../page-objects/chairsPage'
 
 
-test.beforeEach(async ({page})=>{
+
+    test.beforeEach(async ({page})=>{
     
     await page.goto('https://www.shopist.io/')
-})
+    })
 
-
-
-    test('Check sold out product', async ({ page }) => {
+        test('Check sold out product', async ({ page }) => {
+        
         const navigateTo = new NavigationPage(page);
         const onChairsPage = new ChairsPage(page);
 
         await navigateTo.chairsPage()
         
-        await onChairsPage.ScrollToElement()  
+        await onChairsPage.ScrollToElement()   // Scroll to element
         await onChairsPage.UpholsteredBlackBarstool() //Clicking on the element
 
         //The error window element
         const window = await page.locator('.modal-sold-out-content').first();
         
         
-        //Getting the text of the window
+        //Getting the text of the error window
         const message = await window.textContent();
         
         
