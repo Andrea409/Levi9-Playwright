@@ -14,6 +14,9 @@ export class MyProfilePage extends HelperBase {
     async fillFirstNameInputField(){
         await this.page.locator('#firstname').fill(faker.person.firstName())
     }
+    async deleteLastNameInputField(){
+        await this.page.locator('#lastname').clear()
+    }
     async fillAdress1InputField(){
         await this.page.locator('#address1').fill(faker.location.city())
     }
@@ -38,7 +41,7 @@ export class MyProfilePage extends HelperBase {
       await this.page.getByText("Save profile").click()
     }
     async locateBannerText() {
-         const element = this.page.locator('.error').getByText("Please enter a lastname");
+         const element = this.page.getByText("Please enter a lastname");
          const text = await element.innerText();
          return text;
 
