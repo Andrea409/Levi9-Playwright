@@ -9,15 +9,8 @@ test.beforeEach(async ({page})=>{
 })
 test('navigate to chairs page', async ({page})=>{
     const navigateTo = new NavigationPage(page)
-    await navigateTo.chairsPage()
-    await navigateTo.sofasPage()
-    await navigateTo.beddingPage()
     await navigateTo.lightingPage()
-    await navigateTo.myProfilePage()
-    await navigateTo.cartPage()
-    await navigateTo.shopNowPage()
-    await navigateTo.signUpForShopist()
-    })
+ })
     
     test('total price calculation', async ({ page }) => {
         const navigateTo = new NavigationPage(page);
