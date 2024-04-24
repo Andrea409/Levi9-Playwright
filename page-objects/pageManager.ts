@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { NavigationPage } from "./navigationPage"
 import { ChairsPage } from "./chairsPage"
 import { SofasPage } from "./sofasPage"
@@ -8,8 +8,6 @@ import { MyProfilePage } from "./myProfilePage"
 import { CartPage } from "./CartPage"
 import { ShopNowPage } from "./shopNowPage"
 import{SignUpForShopistPage} from "./signUpForShopistPage"
-
-
 
 export class PageManager {
 private readonly page: Page
@@ -34,7 +32,6 @@ constructor(page: Page ){
     this.cartPage = new CartPage(this.page)
     this.shopNowPage = new ShopNowPage(this.page)
     this.signUpForShopistPage = new SignUpForShopistPage(this.page)
-
 }
 
 navigateTo(){
@@ -44,6 +41,7 @@ navigateTo(){
 OnChairsPage(){
     return this.chairsPage
 }
+
 OnSofasPage(){
     return this.sofasPage
 }
@@ -51,21 +49,24 @@ OnSofasPage(){
 onBeddingPage(){
     return this.beddingPage
 }
+
 OnLightingPage(){
     return this.lightingPage
 }
+
 OnMyProfilePage(){
     return this.myProfilePage
 }
+
 OnCartPage(){
     return this.cartPage
 }
+
 OnShopingNowPage(){
     return this.shopNowPage
 }
+
 OnSignUpForShopist(){
     return this.signUpForShopistPage
 }
-
-
 }

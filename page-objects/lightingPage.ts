@@ -1,19 +1,16 @@
 import { Page, expect } from '@playwright/test';
 import { HelperBase } from './helperBase';
 
-
 export class LightingPage extends HelperBase {
 
     constructor(page: Page){
         super(page)
     }
-
     async AdjustableWallLamp() {
         const element = this.page.locator('div:nth-child(9) > div > a');
         await element.click(); 
     }
-
-    async ScrollToElement() {
+     async ScrollToElement() {
         const element = this.page.locator('div:nth-child(9) > div > a');
         await element.scrollIntoViewIfNeeded();
     }
@@ -27,9 +24,15 @@ export class LightingPage extends HelperBase {
         await this.page.getByText("+").click()
     }
     async Price(){
-        //this.page.locator('.product-price').click()
-        this.page.locator('.line').nth(1)
-    
+       // this.page.locator('.product-price').click()
+       const element = this.page.locator('.description .price')
+        const endValue = await element.innerText()
+        return endValue
+      }
+    async priceProduct(){
+        const price =  this.page.locator('.blocks .product-price')  
+        const value = await price.innerText()
+        return value
     }
 }
 

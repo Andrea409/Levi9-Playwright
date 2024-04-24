@@ -1,11 +1,9 @@
-import { Page, expect } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { HelperBase } from './helperBase';
 
 export class NavigationPage extends HelperBase {
     
-    
-
-    constructor(page: Page){
+     constructor(page: Page){
         super(page)
     }
 
@@ -39,9 +37,7 @@ export class NavigationPage extends HelperBase {
     async signUpForShopist(){
         await this.page.getByText('SIGN UP FOR SHOP.IST').first().click()
     }
-
-
-    }
+}
 
 
 

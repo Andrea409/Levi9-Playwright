@@ -29,12 +29,15 @@ test('navigate to chairs page', async ({page})=>{
         await onLightingPage.ScrollToElement();
         await onLightingPage.AdjustableWallLamp();
         await onLightingPage.AddToElement()
+
+        expect(await onLightingPage.Price()).toEqual(await onLightingPage.priceProduct())
+       
         await onLightingPage.Card()
         await onLightingPage.Plus()
         
         //const price = await page.getByText('420.60').textContent()
-        //console.log(price)
+           console.log(await onLightingPage.Price())
         
-        expect(onLightingPage.Price).toEqual('&420.00')
+       
         
     }); 
