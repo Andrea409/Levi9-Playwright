@@ -9,8 +9,6 @@ import { CartPage } from "./CartPage"
 import { ShopNowPage } from "./shopNowPage"
 import{SignUpForShopistPage} from "./signUpForShopistPage"
 
-
-
 export class PageManager {
 private readonly page: Page
 private readonly navigationPage: NavigationPage

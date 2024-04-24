@@ -3,9 +3,7 @@ import { HelperBase } from './helperBase';
 
 export class NavigationPage extends HelperBase {
     
-    
-
-    constructor(page: Page){
+     constructor(page: Page){
         super(page)
     }
 

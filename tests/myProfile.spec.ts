@@ -18,36 +18,36 @@ test.beforeEach(async ({page})=>{
         await navigateTo.myProfilePage()
 
         //Click on 'EDIT PROFILE' button
-        await onMyProfilePage.editProfile() 
+        await onMyProfilePage.editProfileButton() 
 
         //Data entry for the first name field
-        await onMyProfilePage.firstName()
+        await onMyProfilePage.firstNameField()
 
         //Data entry for the last name field
-        await onMyProfilePage.lastName()
+        await onMyProfilePage.lastNameField()
 
         //Data entry for the adress field
-        await onMyProfilePage.adress1()
+        await onMyProfilePage.adress1Field()
 
         //Data entry for the adress2 field.
-        await onMyProfilePage.adress2()
+        await onMyProfilePage.adress2Field()
 
         //Data entry for the City field.
-        await onMyProfilePage.City()
+        await onMyProfilePage.CityField()
 
         //Data entry for the Zipcode field.
-        await onMyProfilePage.zipCode()
+        await onMyProfilePage.zipCodeField()
 
         //Data entry for the Mobile phone number field.
         await onMyProfilePage.phoneNumberField()
 
         //Selecting a value from a list.
-        await onMyProfilePage.state("DE")
+        await onMyProfilePage.selectStateField("DE")
 
         //Click on the 'SAVE PROFILE' button
-        await onMyProfilePage.SaveProfileButton()
+        await onMyProfilePage.saveProfileButton()
 
         //assertation
-        expect(await onMyProfilePage.BannerText()).toContain('View updated profile');
+        expect(await onMyProfilePage.bannerText()).toContain('View updated profile');
        
     })
