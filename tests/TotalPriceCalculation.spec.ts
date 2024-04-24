@@ -32,10 +32,9 @@ test('navigate to chairs page', async ({page})=>{
         await onLightingPage.Card()
         await onLightingPage.Plus()
         
-        const price = await page.getByText('482.60').
-        textContent()
-        console.log(price)
+        //const price = await page.getByText('420.60').textContent()
+        //console.log(price)
         
-        //expect(price).toEqual('470.60')
+        expect(onLightingPage.Price).toEqual('&420.00')
         
     }); 

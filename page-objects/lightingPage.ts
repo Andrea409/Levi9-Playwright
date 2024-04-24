@@ -27,7 +27,9 @@ export class LightingPage extends HelperBase {
         await this.page.getByText("+").click()
     }
     async Price(){
-        this.page.locator('.product-price').click()
+        //this.page.locator('.product-price').click()
+        this.page.locator('.line').nth(1)
+    
     }
 }
 
