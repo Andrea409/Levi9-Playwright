@@ -9,7 +9,7 @@ test.beforeEach(async ({page})=>{
     await page.goto('https://www.shopist.io/')
     })
     
-    test('Check sold out product', async ({ page }) => {
+    test('Missing Last name in form', async ({ page }) => {
         
         const navigateTo = new NavigationPage(page);
         const onMyProfilePage = new MyProfilePage(page);
@@ -22,10 +22,7 @@ test.beforeEach(async ({page})=>{
 
         //Data entry for the first name field
         await onMyProfilePage.fillFirstNameInputField()
-
-        //Data entry for the last name field
-        await onMyProfilePage.fillLastNameInputField()
-
+        
         //Data entry for the adress field
         await onMyProfilePage.fillAdress1InputField()
 
@@ -48,4 +45,7 @@ test.beforeEach(async ({page})=>{
         await onMyProfilePage.clickOnSaveProfileButton()
 
         //assertation
-        expect(await onMyProfilePage.locateBannerText()).toContain('View updated profile');
+        expect(await onMyProfilePage.locateBannerText()).toContain('View updated profile')
+
+    }
+)
