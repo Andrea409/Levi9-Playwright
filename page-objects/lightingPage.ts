@@ -8,6 +8,7 @@ export class LightingPage extends HelperBase {
         super(page)
     }
 
+
     async AdjustableWallLamp() {
         const element = this.page.locator('div:nth-child(9) > div > a');
         await element.click(); 
@@ -28,6 +29,12 @@ export class LightingPage extends HelperBase {
     }
     async Price(){
         this.page.locator('.product-price').click()
+    }
+}
+
+
+    async adjustableWallLampElement(){
+         const adjustableWallElement =  await this.page.$('img[src="/_nuxt/img/36.072c7ee.jpg"]');
     }
 }
 

@@ -5,7 +5,7 @@ import { SofasPage } from "./sofasPage"
 import { BeddingPage } from "./beddingPage"
 import { LightingPage } from "./lightingPage"
 import { MyProfilePage } from "./myProfilePage"
-import { CartPage } from "./CartPage"
+import { CartPage } from "./cartPage"
 import { ShopNowPage } from "./shopNowPage"
 import{SignUpForShopistPage} from "./signUpForShopistPage"
 
