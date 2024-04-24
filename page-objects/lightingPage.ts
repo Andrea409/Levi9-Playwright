@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { HelperBase } from './helperBase';
 
 export class LightingPage extends HelperBase {
@@ -6,33 +6,46 @@ export class LightingPage extends HelperBase {
     constructor(page: Page){
         super(page)
     }
-    async AdjustableWallLamp() {
+    async ClickOnAdjustableWallLampProduct() {
         const element = this.page.locator('div:nth-child(9) > div > a');
         await element.click(); 
     }
-     async ScrollToElement() {
+     async scrollToProductElement() {
         const element = this.page.locator('div:nth-child(9) > div > a');
         await element.scrollIntoViewIfNeeded();
     }
-    async AddToElement(){
+    async clickOnAddToElementButton(){
         await this.page.locator('.description').getByText("Add to cart").click()
     }
-    async Card(){
+    async navigateToCard(){
         await this.page.locator('.menu-item-large').getByText("Cart (1)").click()
     }
-    async Plus(){
+    async quantityIncreaseButton(){
         await this.page.getByText("+").click()
     }
-    async Price(){
-       // this.page.locator('.product-price').click()
-       const element = this.page.locator('.description .price')
-        const endValue = await element.innerText()
-        return endValue
-      }
-    async priceProduct(){
-        const price =  this.page.locator('.blocks .product-price')  
+    async contentOfPriceElement(){
+        const priceElement = this.page.locator('.product-price').getByText('$')
+        const pE = await priceElement.innerText()
+        return pE
+    }
+    async contentOfpriceProductElement(){
+        const price =  this.page.getByText('$').nth(1) 
         const value = await price.innerText()
         return value
     }
+    async Price2(){
+        
+        const priceElement = this.page.locator('.product-price').getByText('$')
+        const pE = await priceElement.innerText()
+        const priceValue = parseFloat(pE.replace('$', '')) * 2
+        return priceValue
+     }
+     async priceProduct2(){
+
+        const price =  this.page.getByText('$').nth(1) 
+        const value = await price.innerText()
+        const pV = parseFloat(value.replace('$', '')) * 2
+        return pV
+}
 }
 
