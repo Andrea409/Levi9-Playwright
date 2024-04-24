@@ -18,36 +18,36 @@ test.beforeEach(async ({page})=>{
         await navigateTo.myProfilePage()
 
         //Click on 'EDIT PROFILE' button
-        await onMyProfilePage.editProfileButton() 
+        await onMyProfilePage.clickOnEditProfileButton() 
 
         //Data entry for the first name field
-        await onMyProfilePage.firstNameField()
+        await onMyProfilePage.fillFirstNameInputField()
 
         //Data entry for the last name field
-        await onMyProfilePage.lastNameField()
+        await onMyProfilePage.fillLastNameInputField()
 
         //Data entry for the adress field
-        await onMyProfilePage.adress1Field()
+        await onMyProfilePage.fillAdress1InputField()
 
         //Data entry for the adress2 field.
-        await onMyProfilePage.adress2Field()
+        await onMyProfilePage.fillAdress2InputField()
 
         //Data entry for the City field.
-        await onMyProfilePage.CityField()
+        await onMyProfilePage.fillCityInputField()
 
         //Data entry for the Zipcode field.
-        await onMyProfilePage.zipCodeField()
+        await onMyProfilePage.fillZipCodeInputField()
 
         //Data entry for the Mobile phone number field.
-        await onMyProfilePage.phoneNumberField()
+        await onMyProfilePage.fillPhoneNumberField()
 
         //Selecting a value from a list.
         await onMyProfilePage.selectStateField("DE")
 
         //Click on the 'SAVE PROFILE' button
-        await onMyProfilePage.saveProfileButton()
+        await onMyProfilePage.clickOnSaveProfileButton()
 
         //assertation
-        expect(await onMyProfilePage.bannerText()).toContain('View updated profile');
+        expect(await onMyProfilePage.locateBannerText()).toContain('View updated profile');
        
     })
