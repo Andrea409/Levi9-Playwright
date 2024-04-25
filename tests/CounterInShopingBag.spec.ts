@@ -27,6 +27,8 @@ test.beforeEach(async ({page})=>{
         await onBeddingPage.navigateToCartButton()
         //Click on the Quantity increase button 
         await onBeddingPage.quantityIncreaseButton()
+
+        await page.getByText('$').nth(1).click()
         //Click on Reduce Poroduct Count button 
         await onBeddingPage.reduceProductCountButton()
         
