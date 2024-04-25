@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { HelperBase } from './helperBase';
 
 export class BeddingPage extends HelperBase {
@@ -17,5 +17,9 @@ export class BeddingPage extends HelperBase {
     }
     async clickOnRemoveButton(){
         await this.page.getByText("Remove").click()
+    }
+    async TextAfterRemoveAllProducts(){
+       const RemoveText =  this.page.getByText("Your cart is currently empty.").innerText()
+       return RemoveText
     }
 }
