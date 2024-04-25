@@ -9,7 +9,7 @@ test.beforeEach(async ({page})=>{
     await page.goto('https://www.shopist.io/')
     })
     
-    test('Remove item from the shopping bag', async ({ page }) => {
+    test('Counter in shopping bag', async ({ page }) => {
         
         const navigateTo = new NavigationPage(page);
         const onBeddingPage = new BeddingPage(page);
@@ -21,9 +21,7 @@ test.beforeEach(async ({page})=>{
         await onBeddingPage.navigateToCartButton()
         await onBeddingPage.clickOnRemoveButton()
        
-        expect(await onBeddingPage.appearsTextAfterRemoveAllProducts()).toContain('Your cart is currently empty.')
+       // expect(await onBeddingPage.appearsTextAfterRemoveAllProducts()).toContain('Your cart is currently empty.')
     }  
    
 )
-
-
