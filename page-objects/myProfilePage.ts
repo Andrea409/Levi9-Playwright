@@ -2,6 +2,7 @@
 import { Page } from '@playwright/test';
 import { HelperBase } from './helperBase';
 import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
 export class MyProfilePage extends HelperBase {
 

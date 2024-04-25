@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { HelperBase } from './helperBase';
 
 export class ChairsPage extends HelperBase {
@@ -11,11 +11,14 @@ export class ChairsPage extends HelperBase {
         
         
     }
-
-    async ScrollToElement() {
+     async ScrollToElement() {
     
         const element1 = this.page.getByText("Upholstered Black Barstool")
         await element1.scrollIntoViewIfNeeded();
+    }
+
+    async errorDialogBox(){
+        return this.page.locator('.modal-sold-out-content').first();
     }
 
     
