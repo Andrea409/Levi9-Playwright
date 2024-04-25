@@ -19,7 +19,7 @@ test.beforeEach(async ({page})=>{
         await onBeddingPage.clickOnWhiteLinenDuvetCover()
         await onBeddingPage.clickOnAddToCartButton()
         await onBeddingPage.navigateToCartButton()
-        await onBeddingPage.clickOnRemoveButton()
+        
        
        // expect(await onBeddingPage.appearsTextAfterRemoveAllProducts()).toContain('Your cart is currently empty.')
     }  
