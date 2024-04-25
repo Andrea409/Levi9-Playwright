@@ -19,6 +19,10 @@ export class ChairsPage extends HelperBase {
         await element1.scrollIntoViewIfNeeded();
     }
 
+    async errorDialogBox(){
+        return this.page.locator('.modal-sold-out-content').first();
+    }
+
     
     
 }

@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { HelperBase } from './helperBase';
 
 export class NavigationPage extends HelperBase {
@@ -8,15 +8,16 @@ export class NavigationPage extends HelperBase {
     }
 
     async chairsPage(){
-        await this.page.getByText('CHAIRS').first().click()
+        await this.page.getByText('CHAIRS').first().click({timeout: 160000})
     }
 
     async sofasPage(){
+        
         await this.page.getByText('SOFAS').first().click()
     }
 
     async beddingPage(){
-        await this.page.getByText('BEDDING').first().click()
+        await this.page.getByText('BEDDING').first().click({timeout: 5000})
     }
 
     async lightingPage(){
@@ -29,12 +30,17 @@ export class NavigationPage extends HelperBase {
 
     async cartPage(){
         await this.page.getByText('CART').first().click()
+        
     }
 
     async shopNowPage(){
-        await this.page.getByText('Shop now').first().click()
+        
+        await this.page.getByRole('link',{name:'Shop the look Your Guestroom'}).click()
+        
+        
     }
     async signUpForShopist(){
+        
         await this.page.getByText('SIGN UP FOR SHOP.IST').first().click()
     }
 
