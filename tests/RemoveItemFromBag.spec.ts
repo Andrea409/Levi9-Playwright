@@ -21,9 +21,9 @@ test.beforeEach(async ({page})=>{
         await onBeddingPage.navigateToCartButton()
         await onBeddingPage.clickOnRemoveButton()
        
-        expect(onBeddingPage.TextAfterRemoveAllProducts()).toContain('Your cart is currently empty.')
+        expect(await onBeddingPage.appearsTextAfterRemoveAllProducts()).toContain('Your cart is currently empty.')
     }  
    
-)// expect(await onMyProfilePage.locateBannerText()).toContain('Please enter a lastname')
+)
 
 

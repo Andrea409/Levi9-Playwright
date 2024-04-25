@@ -18,8 +18,13 @@ export class BeddingPage extends HelperBase {
     async clickOnRemoveButton(){
         await this.page.getByText("Remove").click()
     }
-    async TextAfterRemoveAllProducts(){
-       const RemoveText =  this.page.getByText("Your cart is currently empty.").innerText()
-       return RemoveText
+    async appearsTextAfterRemoveAllProducts(){
+       const RemoveText = this.page.locator('.no-products').getByText("Your cart is currently empty.")
+       const textAfterRemove = await RemoveText.innerText()
+       return textAfterRemove
     }
 }
+
+
+
+
