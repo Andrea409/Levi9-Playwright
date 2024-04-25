@@ -2,7 +2,6 @@
 import { Page } from '@playwright/test';
 import { HelperBase } from './helperBase';
 import { faker } from '@faker-js/faker';
-import { faker } from '@faker-js/faker';
 
 export class MyProfilePage extends HelperBase {
 
@@ -14,6 +13,9 @@ export class MyProfilePage extends HelperBase {
     }
     async fillFirstNameInputField(){
         await this.page.locator('#firstname').fill(faker.person.firstName())
+    }
+    async fillLastNameInputField(){
+        await this.page.locator('#lastname').fill(faker.person.lastName())
     }
     async deleteLastNameInputField(){
         await this.page.locator('#lastname').clear()
