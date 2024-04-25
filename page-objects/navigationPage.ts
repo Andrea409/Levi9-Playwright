@@ -43,9 +43,7 @@ export class NavigationPage extends HelperBase {
         
         await this.page.getByText('SIGN UP FOR SHOP.IST').first().click()
     }
-
-
-    }
+}
 
 
 

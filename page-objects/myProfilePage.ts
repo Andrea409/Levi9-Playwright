@@ -1,5 +1,7 @@
+
 import { Page } from '@playwright/test';
 import { HelperBase } from './helperBase';
+import { faker } from '@faker-js/faker';
 import { faker } from '@faker-js/faker';
 
 export class MyProfilePage extends HelperBase {
@@ -13,8 +15,8 @@ export class MyProfilePage extends HelperBase {
     async fillFirstNameInputField(){
         await this.page.locator('#firstname').fill(faker.person.firstName())
     }
-    async fillLastNameInputField(){
-        await this.page.locator('#lastname').fill(faker.person.lastName())
+    async deleteLastNameInputField(){
+        await this.page.locator('#lastname').clear()
     }
     async fillAdress1InputField(){
         await this.page.locator('#address1').fill(faker.location.city())
@@ -40,7 +42,7 @@ export class MyProfilePage extends HelperBase {
       await this.page.getByText("Save profile").click()
     }
     async locateBannerText() {
-         const element = this.page.locator('.inline-link').getByText("View updated profile");
+         const element = this.page.getByText("Please enter a lastname");
          const text = await element.innerText();
          return text;
 
