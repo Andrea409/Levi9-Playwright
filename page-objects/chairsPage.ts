@@ -13,8 +13,7 @@ export class ChairsPage extends HelperBase {
         
         
     }
-
-    async ScrollToElement() {
+     async ScrollToElement() {
     
         const element1 = this.page.getByText("Upholstered Black Barstool")
         await element1.scrollIntoViewIfNeeded();
