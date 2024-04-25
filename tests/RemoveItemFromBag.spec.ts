@@ -16,11 +16,20 @@ test.beforeEach(async ({page})=>{
 
         //navigate to MyProfilePage
         await navigateTo.beddingPage()
+
+        //Click on the White Linen Duvet Cover
         await onBeddingPage.clickOnWhiteLinenDuvetCover()
+
+        //Click on the 'Add To Cart' button
         await onBeddingPage.clickOnAddToCartButton()
+
+        //Navigate to Cart page
         await onBeddingPage.navigateToCartButton()
+
+        //Remove products from cart 
         await onBeddingPage.clickOnRemoveButton()
        
+        //assertation- Verify whether the products have been successfully deleted.
         expect(await onBeddingPage.appearsTextAfterRemoveAllProducts()).toContain('Your cart is currently empty.')
     }  
    
