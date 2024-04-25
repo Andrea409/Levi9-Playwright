@@ -23,6 +23,12 @@ export class BeddingPage extends HelperBase {
        const textAfterRemove = await RemoveText.innerText()
        return textAfterRemove
     }
+    async quantityIncreaseButton(){
+        await this.page.getByText("+").click()
+    }
+    async reduceProductCountButton(){
+        await this.page.getByText("-").click()
+    }
 }
 
 
