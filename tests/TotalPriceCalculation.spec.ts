@@ -38,7 +38,7 @@ test('navigate to chairs page', async ({page})=>{
         //Get the value of the second element.
         const priceInCartPage = await page.locator('.product-price').innerText()
 
-        ////Displaying the value
+        //Displaying the value
         console.log("value of element from the cart page", priceInCartPage )
 
        // Removing the $ sign
@@ -60,7 +60,7 @@ test('navigate to chairs page', async ({page})=>{
         expect(priceInCartPage).toEqual(firstPrice)
 
         //Click on the quantity increase button 
-        await onLightingPage.ClickOnQuantityIncreaseButton()
+        await onLightingPage.clickOnQuantityIncreaseButton()
         
         //Obtaining the value of the priceElement element after adding the product
         const price3 = await page.locator('.product-price').innerText()

@@ -20,7 +20,7 @@ export class LightingPage extends HelperBase {
     async navigateToCartPage(){
         await this.page.locator('.menu-item-large').getByText("Cart (1)").click()
     }
-    async ClickOnQuantityIncreaseButton(){
+    async clickOnQuantityIncreaseButton(){
         await this.page.getByText("+").click()
     }
    
