@@ -23,7 +23,7 @@ test.beforeEach(async ({page})=>{
         await onBeddingPage.clickOnWhiteLinenDuvetCover()
 
         //price before cart page 
-        const initialPrice = await page.getByText('$').innerText()
+        const initialPrice = await onBeddingPage.EctractContentFromInitialPriceElement()
 
         // Removing the $ sign
         const priceWithout$sign = initialPrice.replace(/[^\d.]/g, '');

@@ -29,8 +29,9 @@ export class BeddingPage extends HelperBase {
     async clickOnReduceProductCountButton(){
         await this.page.getByText("-").click()
     }
-    async 
-    const initialPrice = await page.getByText('$').innerText()
+    async EctractContentFromInitialPriceElement() {
+    const initialPrice = await this.page.getByText('$').innerText()
+    }
 }
 
 
