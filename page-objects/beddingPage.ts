@@ -23,7 +23,26 @@ export class BeddingPage extends HelperBase {
        const textAfterRemove = await RemoveText.innerText()
        return textAfterRemove
     }
+    async clickOnQuantityIncreaseButton(){
+        await this.page.getByText("+").click()
+    }
+    async clickOnReduceProductCountButton(){
+        await this.page.getByText("-").click()
+    }
+    async ectractContentFromInitialPriceElement() {
+    const initialPrice = await this.page.getByText('$').innerText()
+    return initialPrice
+    }
+    async ectractValueFromPricePriceInTheCart(){
+    const priceInTheCart = await this.page.getByText('$').nth(1).innerText()
+    return priceInTheCart
+    }
+    async extracPriceAfterDecreaseNumberOfProducts(){
+        const reducePrice = await this.page.getByText('$').nth(1).innerText()
+        return reducePrice
+    }
 }
+
 
 
 

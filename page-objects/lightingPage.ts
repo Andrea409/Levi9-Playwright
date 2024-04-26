@@ -35,5 +35,6 @@ export class LightingPage extends HelperBase {
         const elementAfterIncreasingQuantityProducts = await this.page.locator('.product-price').innerText()
         return elementAfterIncreasingQuantityProducts
     }
+ 
 }
 
