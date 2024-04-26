@@ -44,11 +44,14 @@ export class MyProfilePage extends HelperBase {
       await this.page.getByText("Save profile").click()
     }
     async locateBannerText() {
-         const element = this.page.getByText("Please enter a lastname");
-         const text = await element.innerText();
-         return text;
+        const element = this.page.locator('.inline-link').getByText("View updated profile");
+        const text = await element.innerText();
+        return text;
 
+   }
+    async locateBannerTextEnterLastName() {
+        const element = this.page.getByText("Please enter a lastname");
+        const text = await element.innerText();
+        return text; 
     }
-    
-
 }

@@ -24,7 +24,6 @@ test('Check sold out product', async ({ page }) => {
        
          //Getting the text of the window
         const message = await (await onChairsPage.errorDialogBox()).textContent();
-        console.log("Andrea", message)
          
         //assertation
          expect(message).toContain("Oops! This item is sold out. It can't be added to your cart. We'll let you know when this item is back in stock.");
