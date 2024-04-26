@@ -26,7 +26,7 @@ test('navigate to chairs page', async ({page})=>{
         await onLightingPage.clickOnAdjustableWallLampProduct()
        
         //Get the value of the first element.
-        const initialPrice = await onLightingPage.extractionContentFromInitialPrice()
+        const initialPrice = await onLightingPage.extractContentFromInitialPrice()
         
         //Displaying the value 
         console.log("The actual price of the one product", initialPrice)
@@ -38,22 +38,22 @@ test('navigate to chairs page', async ({page})=>{
         await onLightingPage.navigateToCartPage()
 
         //Get the value of the second element.
-        const productPriceDisplayedOnCartPage = await onLightingPage.extractionContentFromPriceElementInCartPage()
+        const productPriceDisplayedOnCartPage = await onLightingPage.extractContentFromPriceElementInCartPage()
 
         //Displaying the value
         console.log("The display of the product price when added to the cart", productPriceDisplayedOnCartPage)
 
        // Removing the $ sign
-        const numericPrice = productPriceDisplayedOnCartPage.replace(/[^\d.]/g, '');
+        const initialPriceWithoutDollarSign = productPriceDisplayedOnCartPage.replace(/[^\d.]/g, '');
 
         // Parsing the string into a number
-        const productPriceDisplayedOnCartPageParseValue = parseFloat(numericPrice);
+        const productPriceDisplayedOnCartPageParseValue = parseFloat(initialPriceWithoutDollarSign);
         
         // The value of priceElementValue multiplied by 2
         const multipliedPrice = productPriceDisplayedOnCartPageParseValue * 2;
         
         //Displaying the value multiplied by 2
-        console.log("The value of priceElementValue multiplied by 2", multipliedPrice); // Ovo bi trebalo da ispiše 420
+        console.log("The value of priceElementValue multiplied by 2", multipliedPrice); 
        
         // assertation - Checking the equality of elements between price and priceElement
         expect(productPriceDisplayedOnCartPage).toEqual(initialPrice)
@@ -62,23 +62,17 @@ test('navigate to chairs page', async ({page})=>{
         await onLightingPage.clickOnQuantityIncreaseButton()
         
         //Obtaining the value of the priceElement element after adding the product
-        const priceAfterIncreasingQuantityProducts = await onLightingPage.ExtractContentAfterIncreasingNumberOfProducts()
+        const priceAfterIncreasingQuantityProducts = await onLightingPage.extractContentAfterIncreasingNumberOfProducts()
 
         //Removing the $ sign
-         const numericPrice3 = priceAfterIncreasingQuantityProducts.replace(/[^\d.]/g, '');
+         const increasedPriceWithoutDollarSign = priceAfterIncreasingQuantityProducts.replace(/[^\d.]/g, '');
 
          // Parsing the string into a number
-        const priceAfterIncreasingQuantityProductsParseValue = parseFloat(numericPrice3);
+        const priceAfterIncreasingQuantityProductsParseValue = parseFloat(increasedPriceWithoutDollarSign);
 
         // assertation - Checking the value when multiplied by 2
         expect(multipliedPrice).toEqual(priceAfterIncreasingQuantityProductsParseValue)
-        
-        
-    
-     
-           
-          
-}
+        }
     )
         
        

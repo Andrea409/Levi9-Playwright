@@ -23,19 +23,17 @@ export class LightingPage extends HelperBase {
     async clickOnQuantityIncreaseButton(){
         await this.page.getByText("+").click()
     }
-    async extractionContentFromInitialPrice(){
+    async extractContentFromInitialPrice(){
         const initialPrice = await this.page.locator('.price').innerText()
          return initialPrice 
     }
-    async extractionContentFromPriceElementInCartPage(){
+    async extractContentFromPriceElementInCartPage(){
         const productPriceDisplayedOnCartPage = await this.page.locator('.product-price').innerText()
         return productPriceDisplayedOnCartPage
     }
-    async ExtractContentAfterIncreasingNumberOfProducts(){
+    async extractContentAfterIncreasingNumberOfProducts(){
         const elementAfterIncreasingQuantityProducts = await this.page.locator('.product-price').innerText()
         return elementAfterIncreasingQuantityProducts
     }
-    
-   
 }
 
