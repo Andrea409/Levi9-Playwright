@@ -44,7 +44,7 @@ test.beforeEach(async ({page})=>{
         await onBeddingPage.navigateToCartButton()
 
         //Click on the Quantity increase button 
-        await onBeddingPage.quantityIncreaseButton()
+        await onBeddingPage.clickOnQuantityIncreaseButton()
 
          //price In the cart page 
         const priceInTheCart = await page.getByText('$').nth(1).innerText()
@@ -62,7 +62,7 @@ test.beforeEach(async ({page})=>{
         expect(initialValueMultiple2).toEqual(parsePricePriceFromCart)
 
         //Click on Reduce Poroduct Count button 
-        await onBeddingPage.reduceProductCountButton()
+        await onBeddingPage.clickOnReduceProductCountButton()
 
         //Value of element after click on reduce button
         const reducePrice = await page.getByText('$').nth(1).innerText()

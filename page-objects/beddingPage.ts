@@ -23,12 +23,14 @@ export class BeddingPage extends HelperBase {
        const textAfterRemove = await RemoveText.innerText()
        return textAfterRemove
     }
-    async quantityIncreaseButton(){
+    async clickOnQuantityIncreaseButton(){
         await this.page.getByText("+").click()
     }
-    async reduceProductCountButton(){
+    async clickOnReduceProductCountButton(){
         await this.page.getByText("-").click()
     }
+    async 
+    const initialPrice = await page.getByText('$').innerText()
 }
 
 
