@@ -23,11 +23,13 @@ test('navigate to chairs page', async ({page})=>{
         await onLightingPage.scrollToProductElement()
 
         //click on the product
-        await onLightingPage.clickOnAdjustableWallLampProduct();
+        await onLightingPage.clickOnAdjustableWallLampProduct()
        
         //Get the value of the first element.
-        const firstPrice = await page.locator('.price').innerText() 
-        console.log("FIRST PRICE:", firstPrice)
+        const initialPrice = await onLightingPage.extractionContentFromInitialPrice()
+        
+        //Displaying the value 
+        console.log("The actual price of the one product", initialPrice)
 
         //Click on the "Add to element" button
         await onLightingPage.clickOnAddToElementButton()
@@ -36,46 +38,40 @@ test('navigate to chairs page', async ({page})=>{
         await onLightingPage.navigateToCartPage()
 
         //Get the value of the second element.
-        const priceInCartPage = await page.locator('.product-price').innerText()
+        const productPriceDisplayedOnCartPage = await onLightingPage.extractionContentFromPriceElementInCartPage()
 
         //Displaying the value
-        console.log("value of element from the cart page", priceInCartPage )
+        console.log("The display of the product price when added to the cart", productPriceDisplayedOnCartPage)
 
        // Removing the $ sign
-        const numericPrice = priceInCartPage.replace(/[^\d.]/g, '');
-
-        //Displaying the value
-        console.log("Removing the $ sign", numericPrice)
+        const numericPrice = productPriceDisplayedOnCartPage.replace(/[^\d.]/g, '');
 
         // Parsing the string into a number
-        const priceElementValue = parseFloat(numericPrice);
+        const productPriceDisplayedOnCartPageParseValue = parseFloat(numericPrice);
         
         // The value of priceElementValue multiplied by 2
-        const expectedValue = priceElementValue * 2;
+        const multipliedPrice = productPriceDisplayedOnCartPageParseValue * 2;
         
-        //Displaying the value
-        console.log("The value of priceElementValue multiplied by 2", expectedValue); // Ovo bi trebalo da ispiše 420
+        //Displaying the value multiplied by 2
+        console.log("The value of priceElementValue multiplied by 2", multipliedPrice); // Ovo bi trebalo da ispiše 420
        
         // assertation - Checking the equality of elements between price and priceElement
-        expect(priceInCartPage).toEqual(firstPrice)
+        expect(productPriceDisplayedOnCartPage).toEqual(initialPrice)
 
         //Click on the quantity increase button 
         await onLightingPage.clickOnQuantityIncreaseButton()
         
         //Obtaining the value of the priceElement element after adding the product
-        const price3 = await page.locator('.product-price').innerText()
+        const priceAfterIncreasingQuantityProducts = await onLightingPage.ExtractContentAfterIncreasingNumberOfProducts()
 
         //Removing the $ sign
-         const numericPrice3 = price3.replace(/[^\d.]/g, '');
+         const numericPrice3 = priceAfterIncreasingQuantityProducts.replace(/[^\d.]/g, '');
 
-         //Displaying the value
-         console.log("Third value without $ sign", numericPrice3)
-
-        // Parsing the string into a number
-        const price3Value = parseFloat(numericPrice3);
+         // Parsing the string into a number
+        const priceAfterIncreasingQuantityProductsParseValue = parseFloat(numericPrice3);
 
         // assertation - Checking the value when multiplied by 2
-        expect(expectedValue).toEqual(price3Value)
+        expect(multipliedPrice).toEqual(priceAfterIncreasingQuantityProductsParseValue)
         
         
     

@@ -10,7 +10,7 @@ export class LightingPage extends HelperBase {
         const element = this.page.locator('div:nth-child(9) > div > a');
         await element.click(); 
     }
-     async scrollToProductElement() {
+    async scrollToProductElement() {
         const element = this.page.locator('div:nth-child(9) > div > a');
         await element.scrollIntoViewIfNeeded();
     }
@@ -23,6 +23,19 @@ export class LightingPage extends HelperBase {
     async clickOnQuantityIncreaseButton(){
         await this.page.getByText("+").click()
     }
+    async extractionContentFromInitialPrice(){
+        const initialPrice = await this.page.locator('.price').innerText()
+         return initialPrice 
+    }
+    async extractionContentFromPriceElementInCartPage(){
+        const productPriceDisplayedOnCartPage = await this.page.locator('.product-price').innerText()
+        return productPriceDisplayedOnCartPage
+    }
+    async ExtractContentAfterIncreasingNumberOfProducts(){
+        const elementAfterIncreasingQuantityProducts = await this.page.locator('.product-price').innerText()
+        return elementAfterIncreasingQuantityProducts
+    }
+    
    
 }
 
