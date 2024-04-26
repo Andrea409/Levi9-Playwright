@@ -29,8 +29,8 @@ export class NavigationPage extends HelperBase {
     }
 
     async cartPage(){
-        await this.page.getByText('CART').first().click()
-        
+       // await this.page.getByText('CART').first().click()
+         this.page.locator('.navbar-small-menu').nth(5)
     }
 
     async shopNowPage(){
